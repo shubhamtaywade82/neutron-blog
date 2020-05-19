@@ -1,4 +1,40 @@
 @import 'bootstrap/dist/css/bootstrap';
-.navbar {
-    background-color: #fdfdfd !important;
+#logo {
+    float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+#logo:hover {
+    color: rgb(42, 179, 60);
+    text-decoration: none;
+}
+
+#home-container {
+    margin-top: 25px;
+}
+
+.jumbotron {
+    background-image: asset-url('jumbo-home.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 425px;
+}
+
+#page-content {
+    flex: 1 0 auto;
+    background-color: lightgrey;
+}
+
+#sticky-footer {
+    flex-shrink: none;
+}
+
+html,
+body {
+    height: 100%;
 }
