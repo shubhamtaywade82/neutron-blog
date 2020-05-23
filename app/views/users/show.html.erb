@@ -4,4 +4,10 @@
   <%= link_to 'Edit your profile', edit_user_path(@user), class: "btn btn-outline-info" %>
 </div>
 <h2 class="text-center mt-4"><%= @user.username %>'s Articles</h2>
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
 <%= render 'articles/articles' %>
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
