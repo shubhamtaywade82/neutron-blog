@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
   end
 
   def articles_param
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, categories_ids: [])
   end
 
   def require_same_user
