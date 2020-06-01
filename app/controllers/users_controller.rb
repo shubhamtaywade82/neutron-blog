@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :require_user, only: %i[edit update]
   before_action :require_same_user, only: %i[edit update destroy]
+  before_action :check_login, only: [:new]
   def new
     @user = User.new
   end
@@ -60,6 +61,13 @@ class UsersController < ApplicationController
     if current_user != @user && !current_user.admin?
       flash[:alert] = 'You can only edit or delete your own profile'
       redirect_to @user
+    end
+  end
+
+  def check_login
+    if logged_in?
+      flash[:alert] = 'You already have an account'
+      redirect_to root_path
     end
   end
 end
